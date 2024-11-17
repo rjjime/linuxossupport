@@ -16,3 +16,7 @@
 /docker-compose.yml-orig
 /docker/
 /db_data/
+
+/node_modules
+/.env
+/drupal.tar.gz

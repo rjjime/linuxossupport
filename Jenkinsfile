@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 // Add build commands here
+                sh 'composer install'
                 sh 'npm install'
             }
         }
@@ -22,6 +23,7 @@ pipeline {
                 echo 'Running tests...'
                 // Add test commands here
                 sh 'npm test'
+                sh 'phpunit'
             }
         }
         stage('Deploy') {
