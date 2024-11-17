@@ -1,11 +1,12 @@
 pipeline {
-    agent any
+    agent { label 'docker-agent' } // Specify the Docker agent node
     environment {
         NODE_HOME = '/usr/local/bin/node'
     }
     stages {
         stage('Checkout') {
             steps {
+                echo 'Checking out the source code...'
                 checkout scm
             }
         }
