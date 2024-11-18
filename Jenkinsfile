@@ -6,12 +6,11 @@ pipeline {
     stages {
         stage('Install Composer') {
             steps {
-                echo 'Installing composer....'
+                echo 'Installing composer...'
                 // Install Composer if not already present
                 sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer'
             }
         }
-    stages {
         stage('Checkout') {
             steps {
                 echo 'Checking out the source code...'
