@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Install Composer') {
             steps {
+                echo 'Checking out the source code...'
                 script {
+                echo 'Installing composer....'
                     // Install Composer if not already present
                     sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer'
                 }
