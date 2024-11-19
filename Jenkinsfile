@@ -5,7 +5,7 @@ pipeline {
         NODE_HOME = '/usr/local/bin/node'
         COMPOSER_HOME = '/home/jenkins'
         PATH = "/home/jenkins:$PATH" // Ensure Composer is globally available
-#        PATH = "/usr/local/bin:/usr/bin:/path/to/npm:$PATH"  // Adjust path if necessary
+//        PATH = "/usr/local/bin:/usr/bin:/path/to/npm:$PATH"  // Adjust path if necessary
 
     }
     stages {
