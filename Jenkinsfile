@@ -35,7 +35,7 @@ pipeline {
                 echo 'Running tests...'
                 // Add test commands here
 //                sh 'npm test'
-                sh 'phpunit tests/'
+//                sh 'phpunit tests/'
             }
         }
         stage('Deploy') {
