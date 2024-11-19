@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Installing composer...'
                 // Install Composer if not already present
-                sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer'
+                sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/home/jenkins --filename=composer'
             }
         }
         stage('Checkout') {
