@@ -1,7 +1,10 @@
 pipeline {
     agent { label 'docker-agent' } // Specify the Docker agent node
+
     environment {
         NODE_HOME = '/usr/local/bin/node'
+        COMPOSER_HOME = '/home/jenkins'
+        PATH = "/home/jenkins:$PATH" // Ensure Composer is globally available
     }
     stages {
         stage('Install Composer') {
@@ -30,7 +33,7 @@ pipeline {
                 echo 'Running tests...'
                 // Add test commands here
                 sh 'npm test'
-                sh 'phpunit'
+                sh 'phpunit tests/'
             }
         }
         stage('Deploy') {
