@@ -9,6 +9,12 @@ pipeline {
 
     }
     stages {
+        stage('Clean Workspace') {
+            steps {
+                deleteDir() // Deletes workspace content
+            }
+        }
+
         stage('Install Composer') {
             steps {
                 echo 'Installing composer...'
@@ -19,7 +25,9 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the source code...'
-                checkout scm
+		retry(3) {
+                    checkout scm
+		}
             }
         }
         stage('Build') {
