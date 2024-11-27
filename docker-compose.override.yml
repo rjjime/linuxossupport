@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  drupal:
+    container_name: drupal_app_local
+    ports:
+      - "8080:80"  # Keep the same for consistency.
+    volumes:
+      - ./docroot:/var/www/html  # Map your local Drupal codebase.
+      - ./config:/var/www/html/config  # Map your config directory.
+      - ./scripts:/var/www/html/scripts  # Optional for local debugging.
+    environment:
+      - DRUPAL_DB_HOST=db
+      - DRUPAL_DB_NAME=drupal
+      - DRUPAL_DB_USER=drupal
+      - DRUPAL_DB_PASSWORD=drupal
+    command: >
+      sh -c "echo 'ServerName localhost' >> /etc/apache2/apache2.conf && apache2-foreground"
+
+  db:
+    container_name: drupal_db_local
+    ports:
+      - "3306:3306"  # Use the default MySQL port for local use.
+    volumes:
+      - ./data:/var/lib/mysql  # Use local directory for DB persistence.

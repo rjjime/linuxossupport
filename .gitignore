@@ -18,7 +18,20 @@
 /docker-compose.yml-orig
 /docker/
 /db_data/
+data/
 
 /node_modules
 /.env
 /drupal.tar.gz
+
+# Exclude Docker data
+data/
+
+# Exclude compiled/generated files
+docroot/sites/default/files/
+drupal/
+drupal-app-files/
+
+# Exclude other irrelevant files
+*.tar.gz
+

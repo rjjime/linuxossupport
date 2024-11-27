@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  drupal:
+    container_name: drupal_app_local
+    ports:
+      - "8080:80"  # Use the same port as the base configuration for consistency.
+    volumes:
+      - ./docroot:/var/www/html  # Map your local Drupal codebase for development.
+      - ./config:/var/www/html/config
+      - ./scripts:/var/www/html/scripts  # Include scripts if needed for local debugging.
+    environment:
+      - DRUPAL_DB_HOST=db
+      - DRUPAL_DB_NAME=drupal
+      - DRUPAL_DB_USER=drupal
+      - DRUPAL_DB_PASSWORD=drupal
+    command: >
+      sh -c "echo 'ServerName localhost' >> /etc/apache2/apache2.conf && apache2-foreground"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # Useful for accessing services on your host machine.
+
+  db:
+    container_name: drupal_db_local
+    ports:
+      - "3306:3306"  # Use a standard MySQL port for local convenience.
+    volumes:
+      - ./data:/var/lib/mysql  # Use a local volume for data persistence during development.
+
+  phpmyadmin:
+    container_name: phpmyadmin_local
+    ports:
+      - "8081:80"
+
+  jenkins:
+    container_name: jenkins_master_local
+    ports:
+      - "8082:8080"  # Keep Jenkins on a different port to avoid conflicts.
