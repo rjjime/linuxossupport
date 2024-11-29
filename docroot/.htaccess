@@ -28,6 +28,7 @@ AddEncoding gzip svgz
 # changed at runtime.
 <IfModule mod_php.c>
   php_value assert.active                   0
+  php_value memory_limit                   1G
 </IfModule>
 
 # Requires mod_expires to be enabled.
