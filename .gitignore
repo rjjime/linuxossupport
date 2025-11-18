@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Backup/temp files
+*.bak
+*.tmp
+*~
+
+# Dependencies (if any)
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Build artifacts
+dist/
+build/
+
+# FTP/deployment configs (will use GitLab CI/CD instead)
+*.ftp

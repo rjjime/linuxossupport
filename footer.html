@@ -1,0 +1,125 @@
+<!-- footer.html -->
+<footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Company Info -->
+            <div class="col-md-4 mb-3">
+                <h5>Enterprise Linux Solutions LLC</h5>
+                <p class="small">Providing expert Linux and open source consulting services to enterprises worldwide.</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#services" class="text-light text-decoration-none">Services</a></li>
+                    <li><a href="#expertise" class="text-light text-decoration-none">Expertise</a></li>
+                    <li><a href="#Consultation" class="text-light text-decoration-none">Consultation</a></li>
+                    <li><a href="#support" class="text-light text-decoration-none">Support</a></li>
+                    <li><a href="#support-packs" class="text-light text-decoration-none">Professional Services</a></li>
+                    <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-envelope me-2"></i> info@enterpriselinuxsolutions.com</li>
+                    <li><i class="fas fa-phone me-2"></i> +1 (307) 449-1119</li>
+                    <li><i class="fas fa-map-marker-alt me-2"></i> 1621 Central Ave Suite # 7829, Cheyenne, WY 82001</li>
+                    <li>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.030029540614!2d-104.81701008844053!3d41.13387041156261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3ac24c55f377%3A0x4d17b0b20a4a2fdd!2s1621%20Central%20Ave%20%237829%2C%20Cheyenne%2C%20WY%2082001!5e0!3m2!1sen!2sus!4v1742411974582!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <small class="text-muted">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Enterprise Linux Solutions LLC. All rights reserved.
+                </small>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <small class="text-muted">
+                    <a href="privacy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted text-decoration-none me-3">Terms of Service</a>
+                    <a href="#" id="manageCookiesLink" class="text-muted text-decoration-none">Manage Cookies</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- Cookie Consent Modal (Intrusive Popup) -->
+<div class="modal fade" id="cookieConsentModal" tabindex="-1" aria-labelledby="cookieConsentModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="cookieConsentModalLabel">Cookie Preferences</h5>
+      </div>
+      <div class="modal-body">
+        <p>We use cookies to enhance your experience on our website. Please choose your preferences below. You can change these at any time.</p>
+        <p>For more information, see our <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="cookie-policy.html" target="_blank">Cookie Policy</a>.</p>
+
+        <!-- Essential Cookies (Always On) -->
+        <div class="mb-3">
+          <h6>Essential Cookies</h6>
+          <p class="small text-muted">These are necessary for the website to function and cannot be switched off. They include cookies for security, session management, and basic functionality.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="essentialCookies" checked disabled>
+            <label class="form-check-label" for="essentialCookies">Always Enabled</label>
+          </div>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="mb-3">
+          <h6>Analytics Cookies</h6>
+          <p class="small text-muted">Help us understand how visitors interact with our website by collecting anonymous data. Used for improving performance and user experience.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="analyticsCookies">
+            <label class="form-check-label" for="analyticsCookies">Allow Analytics Cookies</label>
+          </div>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="mb-3">
+          <h6>Marketing Cookies</h6>
+          <p class="small text-muted">Used to track visitors across websites to display relevant ads. May share data with third parties.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="marketingCookies">
+            <label class="form-check-label" for="marketingCookies">Allow Marketing Cookies</label>
+          </div>
+        </div>
+
+        <!-- Functional Cookies -->
+        <div class="mb-3">
+          <h6>Functional Cookies</h6>
+          <p class="small text-muted">Enable enhanced features like remembering preferences or settings.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="functionalCookies">
+            <label class="form-check-label" for="functionalCookies">Allow Functional Cookies</label>
+          </div>
+        </div>
+
+        <!-- Legal Notes -->
+        <p class="small text-muted mt-3">
+          <strong>Legal Rights:</strong> Under GDPR (EU), CCPA (California), and PIPEDA (Canada), you have the right to access, correct, or delete your data. For CCPA, you can opt-out of data sales. Consent is stored locally and can be withdrawn anytime.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" id="rejectAllCookies">Reject All</button>
+        <button type="button" class="btn btn-warning" id="acceptAllCookies">Accept All</button>
+        <button type="button" class="btn btn-primary" id="saveCustomCookies">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
