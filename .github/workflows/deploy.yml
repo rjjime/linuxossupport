@@ -1,0 +1,48 @@
+name: Deploy to ChemiCloud
+
+on:
+  push:
+    branches:
+      - main        # Deploy to production when main is updated
+      - staging     # Deploy to staging when staging is updated
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Determine environment
+        id: environment
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "env_name=production" >> $GITHUB_OUTPUT
+            echo "ftp_host=${{ secrets.PROD_FTP_HOST }}" >> $GITHUB_OUTPUT
+            echo "ftp_user=${{ secrets.PROD_FTP_USER }}" >> $GITHUB_OUTPUT
+            echo "ftp_password=${{ secrets.PROD_FTP_PASSWORD }}" >> $GITHUB_OUTPUT
+            echo "ftp_path=${{ secrets.PROD_FTP_PATH }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
+            echo "env_name=staging" >> $GITHUB_OUTPUT
+            echo "ftp_host=${{ secrets.STAGING_FTP_HOST }}" >> $GITHUB_OUTPUT
+            echo "ftp_user=${{ secrets.STAGING_FTP_USER }}" >> $GITHUB_OUTPUT
+            echo "ftp_password=${{ secrets.STAGING_FTP_PASSWORD }}" >> $GITHUB_OUTPUT
+            echo "ftp_path=${{ secrets.STAGING_FTP_PATH }}" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Deploy to ${{ steps.environment.outputs.env_name }} via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ steps.environment.outputs.ftp_host }}
+          username: ${{ steps.environment.outputs.ftp_user }}
+          password: ${{ steps.environment.outputs.ftp_password }}
+          server-dir: ${{ steps.environment.outputs.ftp_path }}/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            README.md
+            .gitignore
+            **/.DS_Store
