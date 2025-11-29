@@ -540,3 +540,16 @@ a[href="#contact"].btn-lg:hover {
 .navbar-brand i {
     margin-right: 8px; /* Space between Linux icon and text */
 }
+
+.navbar-slogan {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.navbar-text {
+    text-align: center;
+}
+
