@@ -36,20 +36,35 @@ a[href="#contact"].btn-lg:hover {
     border-color: var(--accent-color);
 }
 
+/* Mobile fixes */
+/* @media (max-width: 768x)  {   */
+
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data-center.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 100px 0;
+    padding: 100px 0;  
     text-align: center;
     margin-top: -76px; /* If you have a fixed navbar */
+    
+/* Fix for overlapping Hero */
+
+    margin-bottom: 4rem; /* Add space after hero */
+    width: 100%;
+    z-index: 10;
 }
+
+
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    
+/* Fix for overlapping Hero */
+
+    margin-top: 56px;
 }
 
 .hero p {
