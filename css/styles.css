@@ -46,7 +46,7 @@ a[href="#contact"].btn-lg:hover {
     color: white;
     padding: 100px 0;  
     text-align: center;
-    margin-top: -76px; /* If you have a fixed navbar */
+    margin-top: -46px; /* If you have a fixed navbar */
     
 /* Fix for overlapping Hero */
 
@@ -70,7 +70,7 @@ a[href="#contact"].btn-lg:hover {
 
 @media (max-width: 768px) {
     .hero h1 {
-        margin-top: 96px:  /* Mobile */
+        margin-top: 106px:  /* Mobile */
     }
 }
 .hero p {
