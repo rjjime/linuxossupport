@@ -8,9 +8,11 @@
     --light-color: #f8f9fa;
 }
 
-body {
-    padding-top: 76px;
-}
+/*  body {
+    padding-top: 76px;   
+ }  Bootstrap already handles fixed-navbar body padding */
+
+
 
 /* Button Styles */
 .btn-primary, 
@@ -46,36 +48,33 @@ a[href="#contact"].btn-lg:hover {
     color: white;
     padding: 100px 0;  
     text-align: center;
-    margin-top: -46px; /* If you have a fixed navbar */
-    
-/* Fix for overlapping Hero */
-
+    margin-top: 0;
     margin-bottom: 4rem; /* Add space after hero */
     width: 100%;
+    position: relative;
     z-index: 10;
 }
-
-
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    
-/* Fix for overlapping Hero */
-
     margin-top: 56px;  /* Desktop */
 }
 
-/* Mobile fixes */
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero h1 {
-        margin-top: 106px:  /* Mobile */
+    .hero {
+        padding: 60px; 
     }
+    .hero h1 {
+        font-size: 2rem;
+        margin-top: 106px;
 }
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
+}
+    
 }
 
 .hero .btn-primary.btn-lg {
@@ -388,16 +387,6 @@ a[href="#contact"].btn-lg:hover {
     padding: 40px 0;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero {
-        padding: 60px 0;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-}
 
 
 /*         Support Card                         */
@@ -573,4 +562,3 @@ a[href="#contact"].btn-lg:hover {
 .navbar-text {
     text-align: center;
 }
-
