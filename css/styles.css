@@ -8,9 +8,11 @@
     --light-color: #f8f9fa;
 }
 
-body {
-    padding-top: 76px;
-}
+/*  body {
+    padding-top: 76px;   
+ }  Bootstrap already handles fixed-navbar body padding */
+
+
 
 /* Button Styles */
 .btn-primary, 
@@ -36,25 +38,43 @@ a[href="#contact"].btn-lg:hover {
     border-color: var(--accent-color);
 }
 
+
+
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data-center.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 100px 0;
+    padding: 100px 0;  
     text-align: center;
-    margin-top: -76px; /* If you have a fixed navbar */
+    margin-top: 0;
+    margin-bottom: 4rem; /* Add space after hero */
+    width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    margin-top: 56px;  /* Desktop */
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px; 
+    }
+    .hero h1 {
+        font-size: 2rem;
+        margin-top: 106px;
+}
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
+}
+    
 }
 
 .hero .btn-primary.btn-lg {
@@ -363,20 +383,28 @@ a[href="#contact"].btn-lg:hover {
 }
 
 /* Footer */
-.footer {
+footer {
     padding: 40px 0;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero {
-        padding: 60px 0;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
+/* Footer Links */
+footer a {
+    transition: color 0.3s ease;
 }
+
+footer a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
 
 
 /*         Support Card                         */
@@ -386,7 +414,8 @@ a[href="#contact"].btn-lg:hover {
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     background: #fff;
-    transition: transform 0.3s ease;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .support-card:hover {
@@ -539,4 +568,16 @@ a[href="#contact"].btn-lg:hover {
 
 .navbar-brand i {
     margin-right: 8px; /* Space between Linux icon and text */
+}
+
+.navbar-slogan {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.navbar-text {
+    text-align: center;
 }
